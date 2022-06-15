@@ -1,6 +1,5 @@
 package com.ufc.web.dtos;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.*;
@@ -10,14 +9,14 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TurmaDTO {
+public class DisciplinaDTO {
 	@NotNull
 	@NotEmpty
-	private Disciplina disciplina;	
-	
-	//private List<Aluno> alunos;
+	private String nome;
 	
 	@NotNull
 	@NotEmpty
-	private String horarios;
+	private int creditos;
+		
+	private List<Turma> turmas;
 }

@@ -5,22 +5,22 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ufc.web.dtos.*;
 import com.ufc.web.model.*;
 import com.ufc.web.service.TurmaService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/api/turma")
-public class TurmaController {
-	
+@RequestMapping("/api/aluno")
+public class AlunoController {
+	/*
 	final TurmaService turmaService;
 
-	public TurmaController(TurmaService turmaService) {
+	public AlunoController(TurmaService turmaService) {
 		this.turmaService = turmaService;
 	}
 	
@@ -44,8 +44,8 @@ public class TurmaController {
 		if (!turmaOptional.isPresent()) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Nenhuma turma encontrada com o id: " + id);
 		}
+		
 		return ResponseEntity.status(HttpStatus.OK).body(turmaOptional.get());
-		//return new ResponseEntity<JsonObjectDeserializer<Turma>>(HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{id}")
@@ -70,9 +70,9 @@ public class TurmaController {
 		
 		var turma = turmaOptional.get();
 		turma.setDisciplina(turmaDTO.getDisciplina());
-		//turma.setAlunos(turmaDTO.getAlunos());
+		turma.setAlunos(turmaDTO.getAlunos());
 		turma.setHorarios(turmaDTO.getHorarios());
 				
 		return ResponseEntity.status(HttpStatus.OK).body(turmaService.save(turma));
-	}
+	}*/
 }
